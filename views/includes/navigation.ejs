@@ -1,0 +1,56 @@
+
+  <div class="backdrop"></div>
+<header class="main-header" style="justify-content:flex-start;">
+          <h4>Nikhil's Store</h4>   
+    <button id="side-menu-toggle">Menu</button>
+    <nav class="main-header__nav" style="justify-content: space-between;">
+        <ul class="main-header__item-list">
+            <li class="main-header__item"style="position: relative; left: 25px;">
+                <a class="<%= path === '/' ? 'active' : '' %>" href="/">Shop</a>
+            </li>
+            <li class="main-header__item"style="position: relative; left: 50px;">
+                <a class="<%= path === '/products' ? 'active' : '' %>" href="/products">Products</a>
+            </li>
+            <li class="main-header__item"style="position: relative; left: 75px;">
+                <a class="<%= path === '/orders' ? 'active' : '' %>" href="/orders">Orders</a>
+            </li>
+            <li class="main-header__item"style="position: relative; left: 100px;">
+                <a class="<%= path === '/admin/add-product' ? 'active' : '' %>" href="/admin/add-product">Add Product
+                </a>
+            </li>
+            <li class="main-header__item"style="position: relative; left: 125px;">
+                <a class="<%= path === '/admin/products' ? 'active' : '' %>" href="/admin/products">Admin Products
+                </a>
+            </li>
+            <li><a  class="nav navbar-nav navbar-right" style= 
+                "position: relative; left: 770px;color: white;" href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+        </ul>
+       </nav>
+</header>
+
+
+<nav class="mobile-nav">
+        <ul class="mobile-nav__item-list">
+                <li class="mobile-nav__item">
+                    <a class="<%= path === '/' ? 'active' : '' %>" href="/">Shop</a>
+                </li>
+                <li class="mobile-nav__item">
+                    <a class="<%= path === '/products' ? 'active' : '' %>" href="/products">Products</a>
+                </li>
+                <li class="mobile-nav__item">
+                    <a class="<%= path === '/orders' ? 'active' : '' %>" href="/orders">Orders</a>
+                </li>
+                <li class="mobile-nav__item">
+                    <a class="<%= path === '/admin/add-product' ? 'active' : '' %>" href="/admin/add-product">Add Product
+                    </a>
+                </li>
+                <li class="mobile-nav__item">
+                    <a class="<%= path === '/admin/products' ? 'active' : '' %>" href="/admin/products">Admin Products
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+              </ul>
+
+</nav>

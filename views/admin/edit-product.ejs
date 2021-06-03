@@ -1,0 +1,53 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+
+    <main class= "centered">
+        <form class="form-horizontal" action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>" method="POST">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="title">Title</label>
+                <input type="text" name="title" id="title" value="<% if (editing) { %><%= product.title %><% } %>">
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="imageUrl">Image URL</label>
+                <input type="text" name="imageUrl" id="imageUrl" value="<% if (editing) { %><%= product.imageUrl %><% } %>">
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="price">Price</label>
+                <input type="number" name="price" id="price" step="0.01" value="<% if (editing) { %><%= product.price %><% } %>">
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="description">Description</label>
+                <textarea name="description" id="description" rows="5"><% if (editing) { %><%= product.description %><% } %></textarea>
+            </div>
+            <% if (editing) { %>
+                <input type="hidden" value="<%= product.id %>" name="productId">
+            <% } %>
+
+            <button class="btn" type="submit"><% if (editing) { %>Update Product<% } else { %>Add Product<% } %></button>
+        </form>
+    </main>
+    <div style="position:fixed; width: 100%; bottom:0px;">
+          <footer class="container-fluid text-center" style="position: relative; top: 25px;">
+        <p>Nikhil's Store Copyright (C)</p>  
+        <form class="form-inline" action="">Get deals:
+          <input type="email" class="form-control" size="50" placeholder="Email Address">
+          <button type="button" class="btn btn-danger">Sign Up</button>
+        </form>
+      </footer>
+<footer class="page-footer font-small blue">
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="https://mdbootstrap.com/"> mng.com</a>
+    </div>
+  </footer>
+  </div>
+
+<%- include('../includes/end.ejs') %>
